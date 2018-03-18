@@ -14,7 +14,7 @@ def usersignup(request):
 
             login(request, user)
             messages.success(request, "Successfully signed up!")
-            return redirect("/")
+            return redirect("profile")
         messages.error(request, form.errors)
         return redirect("signup")
     context = {
@@ -34,7 +34,7 @@ def usersignin(request):
             if auth_user is not None:
                 login(request, auth_user)
                 messages.success(request, "Successfully signed in!")
-                return redirect('/')
+                return redirect('profile')
 
             messages.error(request, "Wrong username/password combination. Please try again.")
             return redirect("signin")
@@ -48,4 +48,4 @@ def usersignin(request):
 def usersignout(request):
     logout(request)
     messages.success(request, "Successfully signed out!")
-    return redirect("/")
+    return redirect("login")

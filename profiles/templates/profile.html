@@ -1,0 +1,32 @@
+{% extends "base.html" %}
+
+{% block title %}
+
+{% endblock %}
+
+{% block content %}
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">@{{request.user.username}}</h5>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item"><b>First Name:</b> {{request.user.first_name}}</li>
+        <li class="list-group-item"><b>Last Name:</b> {{request.user.last_name}}</li>
+        <li class="list-group-item"><b>Email Name:</b> {{request.user.email}}</li>
+      </ul>
+      <div class="card-body">
+        <div class="row">
+          <div class="col-6 text-center">
+            <a href="#" class="btn btn-outline-danger">Followers</a>
+          </div>
+          <div class="col-6 text-center">
+            <a href="#" class="btn btn-outline-primary">Following</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
