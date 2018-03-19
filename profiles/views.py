@@ -1,11 +1,14 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth.models import User
 
-def profile(request):
+def profile(request, pk):
     if request.user.is_anonymous:
         return redirect('signin')
 
-    return render(request, 'profile.html')
+    context = {
+        "user": User.objects.get(pk=pk)
+    }
+    return render(request, 'profile.html', context)
 
 def search_users(request):
     if request.user.is_anonymous:

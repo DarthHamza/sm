@@ -9,12 +9,12 @@
   <div class="col-12">
     <div class="card">
       <div class="card-body">
-        <h5 class="card-title text-center">@{{request.user.username}}</h5>
+        <h5 class="card-title text-center">@{{user.username}}</h5>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item"><b>First Name:</b> {{request.user.first_name}}</li>
-        <li class="list-group-item"><b>Last Name:</b> {{request.user.last_name}}</li>
-        <li class="list-group-item"><b>Email Name:</b> {{request.user.email}}</li>
+        <li class="list-group-item"><b>First Name:</b> {{user.first_name}}</li>
+        <li class="list-group-item"><b>Last Name:</b> {{user.last_name}}</li>
+        <li class="list-group-item"><b>Email Name:</b> {{user.email}}</li>
       </ul>
       <div class="card-body">
         <div class="row">

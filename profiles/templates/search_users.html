@@ -10,7 +10,7 @@
       <tbody>
         {% for user in users %}
         <tr>
-          <td>{{user}}</td>
+          <td><a href="{% url 'profile' user.pk %}">{{user}}</a></td>
           <td><a href="#" class="btn btn-outline-danger">Follow</a></td>
         </tr>
         {% endfor %}
