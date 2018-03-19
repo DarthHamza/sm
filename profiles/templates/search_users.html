@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block title %}{% endblock %}
+
+{% block content %}
+<div class="row text-center">
+  <div class="col-12">
+    <h1>The people you're trying to stalk...😉</h1>
+    <table class="table">
+      <tbody>
+        {% for user in users %}
+        <tr>
+          <td>{{user}}</td>
+          <td><a href="#" class="btn btn-outline-danger">Follow</a></td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  </div>
+</div>
+{% endblock %}
