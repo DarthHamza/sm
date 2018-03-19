@@ -48,4 +48,4 @@ def usersignin(request):
 def usersignout(request):
     logout(request)
     messages.success(request, "Successfully signed out!")
-    return redirect("login")
+    return redirect("signin")
