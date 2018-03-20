@@ -29,4 +29,32 @@
     </div>
   </div>
 </div>
+
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title text-center">Clues</h5>
+      </div>
+      {% if user == request.user %}
+      <div class="card-body">
+        <form action="{% url 'profile' user.pk %}" method="POST">
+          {% csrf_token %}
+          <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Recipient's username" name="message">
+            <div class="input-group-append">
+              <input class="btn btn-outline-info" type="submit" value="Leave Clue">
+            </div>
+          </div>
+        </form>
+        {% endif %}
+      </div>
+      <ul class="list-group list-group-flush">
+        {% for clue in user.clue_set.all  %}
+          <li class="list-group-item"><b>{{clue.timestamp}}</b> {{clue.message}}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+</div>
 {% endblock %}
